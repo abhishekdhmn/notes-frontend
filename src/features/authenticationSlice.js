@@ -10,7 +10,7 @@ const initialState = {
 
 export const SignUp = createAsyncThunk("signUp", async (user) => {
   
-  fetch("https://acceptable-dru-abhishekdhmn-e4bb3622.koyeb.app/auth/signup", {
+  fetch("https://notes-backend-ujmp.onrender.com/auth/signup", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,13 +21,15 @@ export const SignUp = createAsyncThunk("signUp", async (user) => {
 })
 
 export const logIn = createAsyncThunk("logIn", async (user) => {
-  const response = await fetch("https://acceptable-dru-abhishekdhmn-e4bb3622.koyeb.app/auth/login", {
+  console.log(JSON.stringify(user));
+  const response = await fetch("https://notes-backend-ujmp.onrender.com/auth/login", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(user)
   })
+  console.log(response);
   const status = response.status;
   const token = await response.text();
 
