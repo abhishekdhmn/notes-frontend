@@ -34,7 +34,7 @@ export const sendNotes = createAsyncThunk("sendNotes", async (tempNote) => {
 })
 
 export const updateNote = createAsyncThunk("updateNote", async (tempNote) => {
-  const response = fetch("https://notes-backend-i0bu.onrender.com/updatenote", {
+  const response = fetch("https://notes-backend-i0bu.onrender.com/notes/updatenote", {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export const updateNote = createAsyncThunk("updateNote", async (tempNote) => {
 })
 
 export const deleteNote = createAsyncThunk("deleteNote", async (id) => {
-  const response = await fetch(`https://notes-backend-i0bu.onrender.com/deletenote/${id}`, {
+  const response = await fetch(`https://notes-backend-i0bu.onrender.com/notes/deletenote/${id}`, {
     method:"DELETE",
     headers: {
       'Content-Type': 'application/json',
