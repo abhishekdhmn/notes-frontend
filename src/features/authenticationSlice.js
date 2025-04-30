@@ -10,7 +10,7 @@ const initialState = {
 
 export const SignUp = createAsyncThunk("signUp", async (user) => {
   
-  fetch("https://notes-backend-emqv.onrender.com/auth/signup", {
+  fetch("https://notes-backend-i0bu.onrender.com/auth/signup", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -21,15 +21,13 @@ export const SignUp = createAsyncThunk("signUp", async (user) => {
 })
 
 export const logIn = createAsyncThunk("logIn", async (user) => {
-  console.log(JSON.stringify(user));
-  const response = await fetch("https://notes-backend-emqv.onrender.com/auth/login", {
+  const response = await fetch("https://notes-backend-i0bu.onrender.com/auth/login", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(user)
   })
-  console.log(response);
   const status = response.status;
   const token = await response.text();
 

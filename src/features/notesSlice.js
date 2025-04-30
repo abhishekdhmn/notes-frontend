@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const fetchNotes = createAsyncThunk("fetchNotes", async () => {
-  const response = await fetch("https://notes-backend-ujmp.onrender.com/notes/getnotes",{
+  const response = await fetch("https://notes-backend-i0bu.onrender.com/notes/getnotes",{
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -21,7 +21,7 @@ export const fetchNotes = createAsyncThunk("fetchNotes", async () => {
 })
 
 export const sendNotes = createAsyncThunk("sendNotes", async (tempNote) => {
-  const response = fetch("https://notes-backend-ujmp.onrender.com/notes/addnote", {
+  const response = fetch("https://notes-backend-i0bu.onrender.com/notes/addnote", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export const sendNotes = createAsyncThunk("sendNotes", async (tempNote) => {
 })
 
 export const updateNote = createAsyncThunk("updateNote", async (tempNote) => {
-  const response = fetch("https://notes-backend-ujmp.onrender.com/notes/updatenote", {
+  const response = fetch("https://notes-backend-i0bu.onrender.com/updatenote", {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export const updateNote = createAsyncThunk("updateNote", async (tempNote) => {
 })
 
 export const deleteNote = createAsyncThunk("deleteNote", async (id) => {
-  const response = await fetch(`https://notes-backend-ujmp.onrender.com/deletenote/${id}`, {
+  const response = await fetch(`https://notes-backend-i0bu.onrender.com/deletenote/${id}`, {
     method:"DELETE",
     headers: {
       'Content-Type': 'application/json',
